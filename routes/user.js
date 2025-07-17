@@ -45,6 +45,8 @@ router.post("/create", async (req, res) => {
       address,
       loanStatus,
       loanAmount,
+      bankName,
+      bankAccountNumber,
       paymentScreenshot,
       frontCnic,
       backCnic,
@@ -55,7 +57,7 @@ router.post("/create", async (req, res) => {
     if (
       !firstName || !lastName || !email || !phoneNumber ||
       !cnic || !address || !loanStatus || !paymentScreenshot || !loanAmount || !frontCnic
-      || !backCnic|| !utilityBill || !jobTitle
+      || !backCnic|| !utilityBill || !jobTitle || !bankName || !bankAccountNumber
     ) {
       return res.status(400).json({ error: "All fields are required" });
     }
@@ -76,6 +78,8 @@ router.post("/create", async (req, res) => {
       address,
       loanStatus,
       loanAmount,
+      bankName,
+      bankAccountNumber,
       paymentScreenshot,
          frontCnic,
       backCnic,
